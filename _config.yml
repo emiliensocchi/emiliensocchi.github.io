@@ -1,0 +1,101 @@
+#### Site settings #################################################################################
+# 
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+###
+
+# Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+plugins:
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-toc
+  - jemoji
+
+
+# Exclude from processing
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+
+# Site metadata
+title: emiliensocchi.io
+description: >- # meant for SEO
+  Emilien Socchi Cloud security consultant researcher software containers Docker Kubernetes AKS GKE OpenShift
+minimal_mistakes_skin: default
+search: true
+
+
+# Google Analytics metadata
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-88Z2EVCWH7"
+    anonymize_ip: false # default
+
+
+# Author metadata
+author:
+  name   : "Emilien Socchi"
+  avatar : "/assets/images/profile.jpg"
+  bio    : "Passionate security researcher and professional."
+  links:
+    - label: "Oslo, Norway"
+      icon: "fas fa-fw fa-map-marker-alt"
+      url: "https://www.google.com/maps/place/Sentrum,+Oslo/@59.9109158,10.7155182,14z/data=!3m1!4b1!4m12!1m6!3m5!1s0x46416d5f98160e4d:0xd87d53fdadd4f6c9!2sOslo,+Norway!8m2!3d59.9373121!4d10.638841!3m4!1s0x46416bb3f8b7d64b:0x9cad8a439f8859cc!8m2!3d59.9127187!4d10.7318187"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://no.linkedin.com/in/emilien-socchi-06b898136"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/emiliensocchi"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/emiliensocchi"
+
+
+# Content on landing page
+permalink: /:categories/:title/
+paginate: 5  # amount of posts to show
+paginate_path: /page:num/
+timezone: no
+include:
+  - _pages
+
+
+# Default settings
+defaults:
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      author_profile: true
+      read_time: true
+      classes: wide
+      toc: true
+      comments: false
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+tag_archive:
+  type: liquid
+  path: /tags/

@@ -1,0 +1,7 @@
+main:
+  - title: "Blog posts"
+    url: /blog/
+  - title: "Academic work"
+    url: /academic/
+  - title: "Subscribe"
+    url: /subscribe/
