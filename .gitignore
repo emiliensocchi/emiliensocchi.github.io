@@ -2,3 +2,4 @@ _site
 _templates
 .sass-cache
 .jekyll-metadata
+Gemfile.lock
