@@ -31,7 +31,7 @@ plugins:
 # Site metadata
 title: emiliensocchi.io
 description: >- # meant for SEO
-  Emilien Socchi Cloud security consultant researcher software containers Docker Kubernetes AKS GKE OpenShift
+  Passionate security researcher and professional, specializing in Cloud security (Azure, GCP), Container technology (software containers, Docker, Kubernetes, AKS, GKE, OpenShift), DevSecOps and Application security.
 minimal_mistakes_skin: default
 search: true
 
@@ -48,7 +48,7 @@ analytics:
 author:
   name   : "Emilien Socchi"
   avatar : "/assets/images/profile.jpg"
-  bio    : "Passionate security researcher and professional."
+  bio    : "Passionate security researcher and professional. #AzureAD #Azure #Kubernetes #ContainerSecurity"
   links:
     - label: "Oslo, Norway"
       icon: "fas fa-fw fa-map-marker-alt"
