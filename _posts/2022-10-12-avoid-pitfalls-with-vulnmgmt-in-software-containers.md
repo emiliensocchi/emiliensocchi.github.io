@@ -43,7 +43,7 @@ Before jumping into the inner workings of static vulnerability scanners for cont
 
 As illustrated below, the process for creating a software container starts with a simple text file called a Dockerfile (on the left). The latter is often referred to as the container’s blueprint, as it holds the instructions describing what the end container will look like in terms of directories, as well as software packages it will contain. A Dockerfile is then built into an immutable container image (in the middle), which represents the container’s shareable package that can be used to “ship code”. A software container (on the right) only consists of an instantiation of a container image. Container images are therefore the central piece of the containerisation process, as they consist of the actual packages that can be shared with others. 
 
-[![The container creation process](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/01_container_creation_process.png)](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/01_container_creation_process.png)
+[![The container creation process](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/01_diagram_container_creation_process.png)](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/01_diagram_container_creation_process.png)
 
 `Figure 1: The creation process of a software container`
 
@@ -55,7 +55,7 @@ It is important to understand that container images are actually made out of lay
 4. Since there is no more instruction in the Dockerfile, the second image containing all the layers is what becomes referred to as the “final image“. The final image is the output expected by the end user and corresponds to the image built out of the provided Dockerfile at the beginning of the process
 5. At this point, the final image can be instantiated into one or multiple containers
  
-[![Visualisation of the layering system, showing how to build a container image based on another one](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/02_layering_system_explained.png)](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/02_layering_system_explained.png)
+[![Visualisation of the layering system, showing how to build a container image based on another one](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/02_diagram_layering_system_explained.png)](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/02_diagram_layering_system_explained.png)
 
 `Figure 2: Visualisation of the layering system, showing how to build a container image based on another one`
 
@@ -166,7 +166,7 @@ However, patching an image with a vulnerability originating from a parent can be
 3. Only once the parent is rebuilt, the company can finally patch its custom image (myapp:1.0.0 in this case), by rebuilding it and inherit the patched layers from its parent
 Note that every child image needs to wait for their parent to rebuild and inherit patched layers from their own parent before they can re-build themselves. In case a vulnerability is originating from a grandparent or higher, any child that fails to rebuild may prevent the rest of the chain to inherit the patch.
 
-[![Workflow required to patch a vulnerability inherited by a grandparent images](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/03_workflow_patching_inherited_vulnerability.png)](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/03_workflow_patching_inherited_vulnerability.png)
+[![Workflow required to patch a vulnerability inherited by a grandparent images](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/03_diagram_workflow_patching_inherited_vulnerability.png)](/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/03_diagram_workflow_patching_inherited_vulnerability.png)
 
 `Figure 3: Workflow required to patch a vulnerability inherited by a grandparent images`
 
