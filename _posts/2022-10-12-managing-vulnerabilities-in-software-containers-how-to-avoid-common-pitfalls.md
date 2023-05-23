@@ -3,8 +3,8 @@ title: "Managing vulnerabilities in software containers: how to avoid common pit
 catchphrase: "How a few common misconceptions about vulnerability patching and detection in software containers can give a false sense of security, and cause you to potentially miss out on critical vulnerabilities."
 last_modified_at: 2022-10-12
 tags:
-  - Container scanner
   - Containers
+  - Container scanner
   - Distrofull
   - Distroless
   - Docker
