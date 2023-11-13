@@ -1,7 +1,7 @@
 ---
 title: "Infecting container images to spread in large-scale container-based infrastructures"
 catchphrase: "How trusting container images may allow threat actors to spread in container-based infrastructures like Kubernetes."
-heading_image: "/assets/images/blog/2023-05-23-infecting-container-images/00_Infecting_Docker_Container_Images_To_Spread_In_Kubernetes.jpg"
+image: "/assets/images/blog/2023-05-23-infecting-container-images/00_Infecting_Docker_Container_Images_To_Spread_In_Kubernetes.jpg"
 last_modified_at: 2023-05-23
 tags:
   - Containers
