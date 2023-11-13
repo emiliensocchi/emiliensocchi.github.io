@@ -8,13 +8,12 @@
 <meta name="theme-color" content="#ffffff">
 
 <!-- Twitter cards -->
-<meta name="twitter:creator" content="@{{ page.author }}">
 <meta name="twitter:title"   content="{{ page.title }}">
 
 {% if page.summary %}
-<meta name="twitter:description" content="{{ page.summary }}">
+<meta name="twitter:description" content="{{ page.title }}">
 {% else %}
-<meta name="twitter:description" content="{{ site.description }}">
+<meta name="twitter:description" content="{{ page.catchphrase }}">
 {% endif %}
 
 {% if page.image %}
