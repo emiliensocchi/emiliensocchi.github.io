@@ -50,6 +50,7 @@ author:
   name   : "Emilien Socchi"
   avatar : "/assets/images/profile.jpg"
   bio    : "Passionate security researcher and professional. #AzureAD #Azure #Kubernetes #ContainerSecurity"
+  twitter: "@emiliensocchi"
   links:
     - label: "Oslo, Norway"
       icon: "fas fa-fw fa-map-marker-alt"
