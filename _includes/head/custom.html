@@ -8,12 +8,9 @@
 <meta name="theme-color" content="#ffffff">
 
 <!-- SEO cards -->
-
-
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="675">
-
 
 {% if page.image %}
 <meta name="twitter:title"  content="{{ page.title }}">
@@ -23,11 +20,9 @@
 <meta name="twitter:image:alt" content="{{ page.title }}">
 <meta name="twitter:creator" content="{{ site.author.twitter }}">
 <meta name="twitter:site" content="{{ site.author.twitter }}">
-
 <meta property="og:image" content="{{ page.image | absolute_url }}">
 <meta property="og:image:alt" content="{{ page.title }}">
 <meta property="og:description" content="{{ page.title }}"/>
-
 
 {% else %}
 <meta name="twitter:title"  content="{{ site.author.name }}">
@@ -36,4 +31,5 @@
 <meta name="twitter:image" content="{{ site.author.avatar | absolute_url }}">
 <meta property="og:image" content="{{ site.author.avatar | absolute_url }}">
 <meta property="og:description" content="{{ site.author.bio }}"/>
+<meta property="og:image:alt" content="{{ site.author.bio }}">
 {% endif %}
