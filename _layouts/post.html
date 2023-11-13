@@ -30,9 +30,11 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-          </h1>{% endif %}
+          {% if page.title %}
+            <h1 id="page-title" class="page__title p-name" itemprop="headline">
+              <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+            </h1>
+          {% endif %}
           {% include page__meta.html %}
         </header>
       {% endunless %}
@@ -43,6 +45,14 @@ layout: default
                 <em>{{ page.catchphrase }}</em>
             {% endif %}
         </div>
+
+        <br />
+        <div>
+          {% if page.heading_image %}
+            <img src="{{ page.heading_image }}" alt="{{ page.title }}">
+          {% endif %}
+        </div>
+
         <br />
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">

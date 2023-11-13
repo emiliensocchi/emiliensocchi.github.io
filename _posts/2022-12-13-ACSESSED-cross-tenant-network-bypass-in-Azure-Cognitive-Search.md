@@ -1,6 +1,7 @@
 ---
 title: "ACSESSED: Cross-tenant network bypass in Azure Cognitive Search"
 catchphrase: "How enabling a single vulnerable feature removed the entire network and identity perimeter around internet-isolated Azure Cognitive Search instances."
+heading_image: "/assets/images/blog/2022-12-13-acsessed-azure-vulnerability/00_ACSESSED_Cross_tenant_network_vulnerability_bypass_in_Azure_Cognitive_Search.png"
 last_modified_at: 2022-12-13
 tags:
   - Azure

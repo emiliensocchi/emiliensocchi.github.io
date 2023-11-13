@@ -1,6 +1,7 @@
 ---
 title: "Managing vulnerabilities in software containers: how to avoid common pitfalls"
 catchphrase: "How a few common misconceptions about vulnerability patching and detection in software containers can give a false sense of security, and cause you to potentially miss out on critical vulnerabilities."
+heading_image: "/assets/images/blog/2022-10-12-pitfalls-with-vulnmgmt-in-containers/00_Managing_vulnerabilities_in_software_containers.jpg"
 last_modified_at: 2022-10-12
 tags:
   - Containers
