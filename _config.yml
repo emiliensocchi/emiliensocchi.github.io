@@ -8,6 +8,7 @@
 
 # Build settings
 markdown: kramdown
+excerpt_separator: <!--end_of_excerpt-->
 remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-include-cache

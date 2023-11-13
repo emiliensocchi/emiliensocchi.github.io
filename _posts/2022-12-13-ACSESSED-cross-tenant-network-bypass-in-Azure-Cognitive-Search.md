@@ -23,6 +23,7 @@ This blog post covers the following:
 - Its disclosure timeline
 - A high-level description of how Microsoft fixed the issue
 
+ <!--end_of_excerpt-->
 
 ## Introduction
 

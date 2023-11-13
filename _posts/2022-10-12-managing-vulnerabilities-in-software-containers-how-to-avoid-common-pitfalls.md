@@ -26,6 +26,7 @@ This blog post covers the following:
 - The challenges that come along with patching vulnerabilities in container images
 - Recommendations on how to manage vulnerabilities in software containers securely 
 
+ <!--end_of_excerpt-->
 
 ## Introduction
 
