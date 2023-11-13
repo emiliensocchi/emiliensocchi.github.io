@@ -33,7 +33,7 @@ plugins:
 # Site metadata
 title: emiliensocchi.io
 tagline: "Passionate security researcher and professional. #EntraID #Azure #Kubernetes #ContainerSecurity"
-url: "https://www.emiliensocchi.io/"
+url: "https://www.emiliensocchi.io"
 description: >- # meant for SEO
   Passionate security researcher and professional, specializing in Cloud security (Azure, GCP), Container technology (software containers, Docker, Kubernetes, AKS, GKE, OpenShift), DevSecOps and Application security.
 minimal_mistakes_skin: default
@@ -72,7 +72,7 @@ author:
 # Twitter metadata
 twitter:
   username: emiliensocchi
-  card: summary
+  card: summary_large_image
 
 
 # Content on landing page
