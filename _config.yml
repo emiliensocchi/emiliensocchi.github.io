@@ -13,6 +13,7 @@ remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-include-cache
   - jekyll-paginate
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-toc
   - jemoji
@@ -31,6 +32,8 @@ plugins:
 
 # Site metadata
 title: emiliensocchi.io
+tagline: "Passionate security researcher and professional. #EntraID #Azure #Kubernetes #ContainerSecurity"
+url: "https://www.emiliensocchi.io/"
 description: >- # meant for SEO
   Passionate security researcher and professional, specializing in Cloud security (Azure, GCP), Container technology (software containers, Docker, Kubernetes, AKS, GKE, OpenShift), DevSecOps and Application security.
 minimal_mistakes_skin: default
@@ -49,7 +52,7 @@ analytics:
 author:
   name   : "Emilien Socchi"
   avatar : "/assets/images/profile.jpg"
-  bio    : "Passionate security researcher and professional. #AzureAD #Azure #Kubernetes #ContainerSecurity"
+  bio    : "Passionate security researcher and professional. #EntraID #Azure #Kubernetes #ContainerSecurity"
   twitter: "@emiliensocchi"
   links:
     - label: "Oslo, Norway"
@@ -64,6 +67,12 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/emiliensocchi"
+
+
+# Twitter metadata
+twitter:
+  username: emiliensocchi
+  card: summary
 
 
 # Content on landing page
