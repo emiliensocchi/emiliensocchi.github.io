@@ -2,7 +2,7 @@
 title: "ACSESSED: Cross-tenant network bypass in Azure Cognitive Search"
 catchphrase: "How enabling a single vulnerable feature removed the entire network and identity perimeter around internet-isolated Azure Cognitive Search instances."
 image: "/assets/images/blog/2022-12-13-acsessed-azure-vulnerability/00_ACSESSED_Cross_tenant_network_vulnerability_bypass_in_Azure_Cognitive_Search.png"
-last_modified_at: 2022-12-13
+last_modified_at: 2024-01-17
 tags:
   - Azure
   - 0-day
@@ -93,7 +93,7 @@ As illustrated above, the requests were all hitting the ```/api/<path-to-resourc
 In other words, it seemed like the ```stamp2.ext.search.windows.net``` host was used as a whitelisted proxy, allowed to submit search queries on behalf of the bearer of the submitted access token. 
 At first, the use of the portal proxy (i.e. ```stamp2.ext.search.windows.net```) seemed like a convenient approach, as it allowed a large number of users from different locations to access the data plane of a private ACS instance, without the need to whitelist every single IP address in the instance’s firewall. 
 
-Additionally, it allowed switching the traditional network perimeter in the form of IP whitelisting, with an identity perimeter relying on access tokens issued and managed by Azure AD instead. Note that whether a network perimeter should be replaced by an identity perimeter in the first place is a questionable choice, but digging into that subject is outside the scope of this article.
+Additionally, it allowed switching the traditional network perimeter in the form of IP whitelisting, with an identity perimeter relying on access tokens issued and managed by Entra ID instead. Note that whether a network perimeter should be replaced by an identity perimeter in the first place is a questionable choice, but digging into that subject is outside the scope of this article.
 
 I assumed the access token submitted to the portal proxy was used for the following purposes and pursued therefore my investigation into that direction, to verify whether that was the case:
 - Ensure the token was issued within the same tenant as the ACS instance
