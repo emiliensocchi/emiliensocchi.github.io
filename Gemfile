@@ -14,3 +14,4 @@ group :jekyll_plugins do
   gem "jekyll-toc"
   gem "jemoji"
 end
+gem "webrick", "~> 1.8"

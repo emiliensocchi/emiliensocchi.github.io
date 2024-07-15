@@ -32,7 +32,7 @@ plugins:
 
 # Site metadata
 title: emiliensocchi.io
-tagline: "Passionate security researcher and professional. #EntraID #Azure #Kubernetes #ContainerSecurity"
+tagline: "Passionate security researcher and professional. #EntraID #Azure #GCP #Kubernetes"
 url: "https://www.emiliensocchi.io"
 description: >- # meant for SEO
   Passionate security researcher and professional, specializing in Cloud security (Azure, GCP), Container technology (software containers, Docker, Kubernetes, AKS, GKE, OpenShift), DevSecOps and Application security.
@@ -52,7 +52,7 @@ analytics:
 author:
   name   : "Emilien Socchi"
   avatar : "/assets/images/profile.jpg"
-  bio    : "Passionate security researcher and professional. #EntraID #Azure #Kubernetes #ContainerSecurity"
+  bio    : "Passionate security researcher and professional. #EntraID #Azure #GCP #Kubernetes"
   twitter: "@emiliensocchi"
   links:
     - label: "Oslo, Norway"
