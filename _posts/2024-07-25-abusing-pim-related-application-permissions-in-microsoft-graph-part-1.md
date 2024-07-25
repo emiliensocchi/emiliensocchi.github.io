@@ -19,7 +19,7 @@ In my mind (or at least in the tier model I am developing), “Tier-0” contain
 
 ### Overview of the series
 
-The original idea was to write a single post documenting all PIM-related application permissions that could be abused to escalate to Global Admin. I quickly realized that the final post would be too large to digest, so I decided to make a series out it. 
+The original idea was to write a single post documenting all PIM-related application permissions that could be abused to escalate to Global Admin. I quickly realized the final post would be too large to digest, so I decided to make a series out it. 
 
 This series is structured as follows:
 - **Part 1**: Escalating to Global Admin via active assignments 
@@ -61,7 +61,7 @@ Users can be eligible to roles directly or via group memberships. In the first c
 ### Overview of abuse information
 
 | Abused application permission | Path type | Known shortest path | Example |
-| [`RoleAssignmentSchedule.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#roleassignmentschedulereadwritedirectory) | Direct | Can assign the Global Admin role to a controlled user account, by creating an active PIM role assignment. | TA assigns the Global Admin role to a user account in their control (assigning to the compromised SP is not possible), re-authenticates with the user account and escalates to Global Admin. <br>Note: if the active role assignment requires MFA, this path may need to be combined with the [`RoleManagementPolicy.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#rolemanagementpolicyreadwritedirectory)permission to be successful, depending on how the controlled user account was compromised. |
+| [`RoleAssignmentSchedule.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#roleassignmentschedulereadwritedirectory) | Direct | Can assign the Global Admin role to a controlled user account, by creating an active PIM role assignment. | TA assigns the Global Admin role to a user account in their control (assigning to the compromised SP is not possible), re-authenticates with the user account and escalates to Global Admin. |
 
 ### Attack path visualization
 
@@ -133,7 +133,8 @@ Executing the above PowerShell script confirms that the [`RoleAssignmentSchedule
 
 | Abused application permission | Path type | Known shortest path | Example |
 |---|---|---|---|
-| [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup) | Direct | Can become owner or member of a group with an active Global Admin assignment (i.e. can update the membership of role-assignable groups). | TA adds a controlled user account to a group that is actively assigned the Global Admin role, re-authenticates with the account and escalates to Global Admin. <br>Note: if the active group assignment requires MFA, this path may need to be combined with the [`RoleManagementPolicy.ReadWrite.AzureADGroup`](#rolemanagementpolicy-readwrite-azureadgroup) permission to be successful, depending on how the controlled user account was compromised.  |
+| [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup) | Direct | Can become owner or member of a group with an active Global Admin assignment (i.e. can update the membership of role-assignable groups). | TA adds a controlled user account to a group that is actively assigned the Global Admin role, re-authenticates with the account and escalates to Global Admin. |
+| [`PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedassignmentschedulereadwriteazureadgroup) | Direct | Same as [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup). | Same as [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup). |
 
 ### Attack path visualization
 
