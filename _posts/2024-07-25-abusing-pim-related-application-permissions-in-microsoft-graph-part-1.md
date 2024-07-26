@@ -53,6 +53,7 @@ Don’t hesitate to let me know if I have missed something, as it is highly poss
 ### What is PIM?
 
 [Privileged Identity Management (PIM)]( https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) is an access-management feature, which enables administrators to provide just-in-time access via eligibilities and activations. The idea is to replace permanent role assignments with a solution making users eligible to roles, and allowing them to activate them temporarily to provide just-in-time access.
+
 Users can be eligible to roles directly or via group memberships. In the first case, the user is provisioned directly with the role upon activation, while the second case temporarily adds the user to a security group that is already assigned roles permanently. The activation can be conditioned to specific requirements, such as the approval of an administrator. 
 
 
@@ -120,7 +121,7 @@ $response = Invoke-WebRequest -Method Post -Uri $uri -Headers $headers -Body $bo
 $response
 ```
 
-Executing the above PowerShell script confirms that the [`RoleAssignmentSchedule.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#roleassignmentschedulereadwritedirectory) permission can be leveraged to assign the Global Admin role to the controlled user via an active PIM role assignment:
+By executing the above PowerShell script, we can confirm that the [`RoleAssignmentSchedule.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#roleassignmentschedulereadwritedirectory) permission can be leveraged to assign the Global Admin role to the controlled user via an active PIM role assignment:
 
 [![](/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/04_screenshot.png)](/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/04_screenshot.png)
 
@@ -205,7 +206,7 @@ $response = Invoke-WebRequest -Method Post -Uri $uri -Headers $headers -Body $bo
 $response
 ```
 
-Executing the above PowerShell script confirms that the [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup) or [`PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedassignmentschedulereadwriteazureadgroup) permission can be leveraged to add a controlled user account to a role-assignable group and escalate privileges via the group’s membership:
+By executing the above PowerShell script, we can confirm that the [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup) or [`PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedassignmentschedulereadwriteazureadgroup) permission can be leveraged to add a controlled user account to a role-assignable group and escalate privileges via the group’s membership:
 
 [![](/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/11_screenshot.png)](/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/11_screenshot.png)
 
@@ -218,6 +219,6 @@ Executing the above PowerShell script confirms that the [`PrivilegedAccess.ReadW
 
 As mentioned in the introduction, I am currently working on a tier model to categorize MS Graph application permissions based on known attacks paths. We have seen that the [`RoleAssignmentSchedule.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#roleassignmentschedulereadwritedirectory), [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup) and [`PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedassignmentschedulereadwriteazureadgroup) permission, all represent a risk for escalating to Global Admin. 
 
-Therefore, these application permissions should be classified as Tier-0, which contains permissions with at least one known technique to create a path to Global Admin. This does **not** mean a path necessarily exist in every tenant, as privilege escalations are often tenant specific, but the goal is to identify permissions with a **risk** of having a path to Global Admin. Note that the table format used in the “Overview of abuse information” sections is the format that will be used for documentation Tier-0 assets in the first version of the tier model.
+Therefore, these permissions should be classified as Tier-0, which contains permissions with at least one known technique to create a path to Global Admin. This does **not** mean a path necessarily exist in every tenant, as privilege escalations are often tenant specific, but the goal is to identify permissions with a **risk** of having a path to Global Admin. Note that the table format used in the “Overview of abuse information” sections is the format that will be used for documenting Tier-0 assets in the first version of the tier model.
 
-Finally, some readers may wonder about situations where active PIM assignments require the use of MFA, due to a role or group policy. Stay assured, bypassing constraints of this kind will be addressed in details in part 3 of this series, so stay tuned 😉
+Finally, some readers may wonder about situations where an active PIM assignment requires the use of MFA, due to a role management policy. Stay assured, bypassing constraints of this kind will be addressed in details in part 3 of this series, so stay tuned 😉
