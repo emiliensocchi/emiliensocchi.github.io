@@ -1,7 +1,7 @@
 ---
 title: "Abusing PIM-related application permissions in Microsoft Graph - Part 1"
 catchphrase: "Escalating to Global Admin via active assignments."
-image: "/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/00_Abusing_PIM_related_application_permissions_In_Microsoft_Graph.jpg"
+image: "/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/00_Abusing_PIM_related_application_permissions_In_Microsoft_Graph.png"
 last_modified_at: 2024-07-26
 tags:
   - Microsoft Graph
