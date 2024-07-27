@@ -2,7 +2,7 @@
 title: "Abusing PIM-related application permissions in Microsoft Graph - Part 1"
 catchphrase: "Escalating to Global Admin via active assignments."
 image: "/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/00_Abusing_PIM_related_application_permissions_In_Microsoft_Graph.png"
-last_modified_at: 2024-07-26
+last_modified_at: 2024-07-27
 tags:
   - Microsoft Graph
   - Entra ID
@@ -155,7 +155,7 @@ We will also assume that the tenant we are targeting provides administrative per
 
 [![](/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/10_screenshot.png)](/assets/images/blog/2024-07-25-abusing-pim-related-application-permissions-part-1/10_screenshot.png)
 
-The PowerShell code to leverage the compromised “Harmless app” and assign our “Harmless user account” to the “Global Admin” group is as follows:
+The PowerShell code to leverage the compromised “Harmless app” and assign our “Harmless user account” to the “Global Admins” group is as follows:
 
 ```
 ## Set SP info
@@ -219,6 +219,6 @@ By executing the above PowerShell script, we can confirm that the [`PrivilegedAc
 
 As mentioned in the introduction, I am currently working on a tier model to categorize MS Graph application permissions based on known attacks paths. We have seen that the [`RoleAssignmentSchedule.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#roleassignmentschedulereadwritedirectory), [`PrivilegedAccess.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedaccessreadwriteazureadgroup) and [`PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup`](https://learn.microsoft.com/en-us/graph/permissions-reference#privilegedassignmentschedulereadwriteazureadgroup) permission, all represent a risk for escalating to Global Admin. 
 
-Therefore, these permissions should be classified as Tier-0, which contains permissions with at least one known technique to create a path to Global Admin. This does **not** mean a path necessarily exist in every tenant, as privilege escalations are often tenant specific, but the goal is to identify permissions with a **risk** of having a path to Global Admin. Note that the table format used in the “Overview of abuse information” sections is the format that will be used for documenting Tier-0 assets in the first version of the tier model.
+Therefore, these permissions should be classified as Tier-0, together with other permissions that have at least one known technique to create a path to Global Admin. This does **not** mean a path necessarily exist in every tenant, as privilege escalations are often tenant specific, but the goal with the model is to identify permissions with a **risk** of having a path to Global Admin. Note that the table format used in the “Overview of abuse information” sections is the format that will be used for documenting Tier-0 assets in the first version of the tier model.
 
 Finally, some readers may wonder about situations where an active PIM assignment requires the use of MFA, due to a role management policy. Stay assured, bypassing constraints of this kind will be addressed in details in part 3 of this series, so stay tuned 😉
