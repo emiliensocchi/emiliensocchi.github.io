@@ -22,9 +22,9 @@ In my mind (or at least in the tier model I am developing), “Tier-0” contain
 The original idea was to write a single post documenting all PIM-related application permissions that could be abused to escalate to Global Admin. I quickly realized the final post would be too large to digest, so I decided to make a series out it. 
 
 This series is structured as follows:
-- **Part 1**: Escalating to Global Admin via active assignments 
-- **Part 2**: Escalating to Global Admin via eligible assignments 
-- **Part 3**: Bypassing assignment, eligibility and activation requirements 
+- [**Part 1**: Escalating to Global Admin via active assignments](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-1)
+- [**Part 2**: Escalating to Global Admin via eligible assignments](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-2)
+- [**Part 3**: Bypassing assignment, eligibility and activation requirements](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-3)
 - **Part 4**: Investigating legacy permissions 
 
 ### What permissions are addressed in this post?
@@ -43,9 +43,10 @@ The abuse of MS Graph application permissions for escalating privileges in Entra
 |---|---|
 | [`AppRoleAssignment.ReadWrite.All`](https://learn.microsoft.com/en-us/graph/permissions-reference#approleassignmentreadwriteall) | [https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48](https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48)<br> [https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/](https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/) |
 | [`Directory.ReadWrite.All`](https://learn.microsoft.com/en-us/graph/permissions-reference#directoryreadwriteall) | [https://posts.specterops.io/directory-readwrite-all-is-not-as-powerful-as-you-might-think-c5b09a8f78a8](https://posts.specterops.io/directory-readwrite-all-is-not-as-powerful-as-you-might-think-c5b09a8f78a8) | 
+| [`UserAuthenticationMethod.ReadWrite.All`](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadwriteall) | [https://posts.specterops.io/id-tap-that-pass-8f79fff839ac](https://posts.specterops.io/id-tap-that-pass-8f79fff839ac) |
 | [`Policy.ReadWrite.PermissionGrant`](https://learn.microsoft.com/en-us/graph/permissions-reference#policyreadwritepermissiongrant) | [https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/](https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/) |
 | [`RoleManagement.ReadWrite.Directory`](https://learn.microsoft.com/en-us/graph/permissions-reference#rolemanagementreadwritedirectory) | [https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48](https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48) |
-| [`UserAuthenticationMethod.ReadWrite.All`](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadwriteall) | [https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/](https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/) |
+| [`UserAuthenticationMethod.ReadWrite.All`](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadwriteall) | [https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/](https://www.tenchisecurity.com/manipulating-roles-and-permissions-in-microsoft-365-environment-via-ms-graph/) <br> [https://posts.specterops.io/id-tap-that-pass-8f79fff839ac](https://posts.specterops.io/id-tap-that-pass-8f79fff839ac) |
 
 Don’t hesitate to let me know if I have missed something, as it is highly possible that I am not aware of all the research that has been published. Note that the idea is to collect only posts documenting the abuse of **specific** application permissions (i.e. not everything about the abuse of service principals or MS Graph) 😊
 
