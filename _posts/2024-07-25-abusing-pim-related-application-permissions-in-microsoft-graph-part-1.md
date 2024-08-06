@@ -25,7 +25,7 @@ This series is structured as follows:
 - [**Part 1**: Escalating to Global Admin via active assignments](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-1)
 - [**Part 2**: Escalating to Global Admin via eligible assignments](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-2)
 - [**Part 3**: Bypassing assignment, eligibility and activation requirements](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-3)
-- **Part 4**: [Investigating legacy permissions](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-4)
+- [**Part 4**: Investigating legacy permissions](https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-4)
 
 ### What permissions are addressed in this post?
 
