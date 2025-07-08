@@ -2,7 +2,7 @@
 title: "Tiering Entra roles and application permissions based on known attack paths"
 catchphrase: "An attempt to better understand the security implications of cloud administrative assets."
 image: "/assets/images/blog/2024-08-07-introducing-cloud-tier-models-based-on-known-attack-paths/00_introducing_cloud_tier_models_based_on_known_attack_paths.png"
-last_modified_at: 2024-08-07
+last_modified_at: 2025-07-08
 tags:
   - Administrative tiering
   - Tier model
@@ -12,6 +12,12 @@ tags:
   - Pentesting
   - Red-teaming
 ---
+
+
+> **Update (2025-07-06)** <br>
+> The project now supports common Azure roles and has its own website: <br>
+> [https://aztier.com](https://aztier.com)
+
 
 ## Introduction
 
