@@ -36,6 +36,7 @@ tagline: "Passionate security researcher and professional. #EntraID #Azure #GCP 
 url: "https://www.emiliensocchi.io"
 description: >- # meant for SEO
   Passionate security researcher and professional, specializing in Cloud security (Azure, GCP), Container technology (software containers, Docker, Kubernetes, AKS, GKE, OpenShift), DevSecOps and Application security.
+image: "/assets/images/profile.jpg"
 minimal_mistakes_skin: default
 search: true
 
@@ -60,7 +61,7 @@ author:
       url: "https://www.google.com/maps/place/Sentrum,+Oslo/@59.9109158,10.7155182,14z/data=!3m1!4b1!4m12!1m6!3m5!1s0x46416d5f98160e4d:0xd87d53fdadd4f6c9!2sOslo,+Norway!8m2!3d59.9373121!4d10.638841!3m4!1s0x46416bb3f8b7d64b:0x9cad8a439f8859cc!8m2!3d59.9127187!4d10.7318187"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://no.linkedin.com/in/emilien-socchi-06b898136"
+      url: "https://no.linkedin.com/in/emilien-socchi"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/emiliensocchi"
